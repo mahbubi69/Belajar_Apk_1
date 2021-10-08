@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_grap"
+    app:startDestination="@id/listSurahFragment">
+
+    <fragment
+        android:id="@+id/listSurahFragment"
+        android:name="com.example.belajar_apk.fragmen.ListSurahFragment"
+        android:label="fragment_list_surah"
+        tools:layout="@layout/fragment_list_surah" >
+        <action
+            android:id="@+id/action_listSurahFragment_to_detailListSurahFragment"
+            app:destination="@id/detailListSurahFragment" />
+        <action
+            android:id="@+id/action_listSurahFragment_to_jadwalWaktuFragment"
+            app:destination="@id/jadwalWaktuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailListSurahFragment"
+        android:name="com.example.belajar_apk.fragmen.DetailListSurahFragment"
+        android:label="fragment_detail_list_surah"
+        tools:layout="@layout/fragment_detail_list_surah" >
+        <action
+            android:id="@+id/action_detailListSurahFragment_to_listSurahFragment"
+            app:destination="@id/listSurahFragment" />
+        <argument
+            android:name="nama"
+            app:argType="string" />
+        <argument
+            android:name="audio"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/jadwalWaktuFragment"
+        android:name="com.example.belajar_apk.fragmen.JadwalWaktuFragment"
+        android:label="fragment_jadwal_waktu"
+        tools:layout="@layout/fragment_jadwal_waktu" />
+</navigation>
